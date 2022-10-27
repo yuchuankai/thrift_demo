@@ -8,12 +8,15 @@ import org.apache.thrift.transport.TNonblockingServerTransport;
 import org.apache.thrift.transport.TTransportFactory;
 
 public class App {
+
+    private static final int SERVER_PORT = 9123;
+
     public static void main(String[] args)
     {
         try
         {
             // 创建非阻塞的 Transport
-            TNonblockingServerTransport serverSocket = new TNonblockingServerSocket(12345);
+            TNonblockingServerTransport serverSocket = new TNonblockingServerSocket(SERVER_PORT);
 
             // 创建 Processor
             TProcessor processor = new Service.Processor(new ServiceImpl());
