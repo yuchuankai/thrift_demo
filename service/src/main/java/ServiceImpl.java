@@ -7,6 +7,7 @@ import java.util.List;
 public class ServiceImpl implements Service.Iface{
     @Override
     public boolean save(User user) throws TException {
+        System.out.println("User:"+user.toString());
         return false;
     }
 
